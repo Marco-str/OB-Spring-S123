@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="saludar" class="com.example.Saludo"/>
+
+
+<!--<bean id="notificationService" class="com.example.NotificationService">-->
+<!--        <constructor-arg name="saludar" ref="saludar"></constructor-arg>-->
+<!--</bean>-->
+
+    <bean id="notificationService" class="com.example.NotificationService">
+        <constructor-arg ref="saludar" />
+    </bean>
+
+    <bean id="userService" class="com.example.UserService">
+        <constructor-arg ref="notificationService" />
+    </bean>
+
+
+</beans>
